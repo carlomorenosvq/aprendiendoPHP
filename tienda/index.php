@@ -34,10 +34,27 @@ if (!isset($_SESSION['productos'])) {
             "precio" => 3400
         ],
     ];
-    $_SESSION['carrito'] = [];
+    $_SESSION['carrito'] = ["Raton To Flama" => 0,
+                            "Alfombrilla To Flama" => 0,
+                            "Portatil To Flama" => 0, 
+                            "Teclado To Flama" => 0, 
+                            "Torre To Flama" => 0,   ];
+    $_SESSION['precioTotal'] = 0;
 }
 
+if(isset($_GET['nombreProducto'])){
+    $_SESSION[`precioTotal`] = $_SESSION['precioTotal'] + $_GET ['precioProducto'];
 
+    foreach ($_SESSION['carrito'] as $llaveCarrito => $valorCarrito) {
+
+        if ($_GET['nombreProducto']===$llaveCarrito) {
+            $_SESSION['carrito'][$llaveCarrito]++;
+            
+        }
+    }
+
+    print_r($_SESSION['carrito']);
+}
 
 
 ?>
@@ -75,9 +92,10 @@ if (!isset($_SESSION['productos'])) {
         ?>
             <td>
                 <form action="" method="get">
-                    <input type="hidden" name="nombreProducto" value="">
-                    <input type="hidden" name="precioProducto" value="">
-                    <input type="hidden" value="Comprar">
+                    <input type="hidden" name="nombreProducto" value="<?php  echo $productos['nombre']?>">
+                    <input type="hidden" name="precioProducto" value="<?php
+                    echo $productos['precio'] ?>">
+                    <input type="submit" value="Comprar">
 
                 </form>
             </td>
@@ -88,6 +106,9 @@ if (!isset($_SESSION['productos'])) {
 
         ?>
     </table>
+
+
+    <a href="carrito.php"> Volver a la tienda</a>
 
 
 

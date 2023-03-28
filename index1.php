@@ -113,31 +113,67 @@ Realiza un pograma que nos diga el horoscopo a partir del día y mes de nacimien
 <!-- Programa de control de acceso a una caja fuerte. La combinacion será un numero de 4 cifras, y el programa nos pedirá la combinacion para abrirla -->
 
 <?php
-if (isset($_GET['intentos'])) {
-    $_GET['intentos']--;
-    $intentos = $_GET['intentos'];
-} else {
-    $intentos = 4;
-}
+// if (isset($_GET['intentos'])) {
+//     $_GET['intentos']--;
+//     $intentos = $_GET['intentos'];
+// } else {
+//     $intentos = 4;
+// }
 
-if ($intentos == 0) {
-    echo "<p>Te has quedado sin intentos. Se cierra la caja fuerte";
-} else if ($_GET['contra'] == 1234){
-    echo "<p>Oleeeeeeeee vaya maquinon</p>";
-}
+// if ($intentos == 0) {
+//     echo "<p>Te has quedado sin intentos. Se cierra la caja fuerte";
+// } else if ($_GET['contra'] == 1234){
+//     echo "<p>Oleeeeeeeee vaya maquinon</p>";
+// }
+
+
+
+
+ ?>
+<!-- //     <p>Introduce la clave</p>
+
+//     <form action="index1.php" method="get">
+//         <input type="text" name="contra" id="">
+//         <input type="hidden" name="intentos" value="<?= $intentos ?>">
+//         <input type="submit" value="Probar">
+//     </form> -->
+<?php  ?>
+
+<?php
+
+    $array = [];
+    $array[0]=0;
+    $array[1]=1;
+    $array[2]=2;
+    $array[3]=3;
+
+    $array2 = [0,1,2,3,4];
+
+    $array3 = new SplFixedArray(10);
+    $array[] = 4; //Añadir el 4 
+//  Formas de Definir un array
+
+    $array = ["Rosa" =>25, "Jesus" =>25, "Pepe" =>25];
+
+    foreach ($array as $elemento => $valorKey) {
+        echo "<p>$valorKey</p>";
+    }
+    for ($i=0; $i < count($array); $i++) { 
+
+        echo '<p>' .$i. '</p>';
+    }
+
 
 
 
 
 ?>
-    <p>Introduce la clave</p>
 
-    <form action="index1.php" method="get">
-        <input type="text" name="contra" id="">
-        <input type="hidden" name="intentos" value="<?= $intentos ?>">
-        <input type="submit" value="Probar">
-    </form>
-<?php  ?>
+
+
+
+
+
 </body>
 
 </html>
