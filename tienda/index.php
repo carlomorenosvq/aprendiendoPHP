@@ -90,6 +90,12 @@ if(isset($_GET['nombreProducto'])){
 
 
         ?>
+
+        
+
+
+
+
             <td>
                 <form action="" method="get">
                     <input type="hidden" name="nombreProducto" value="<?php  echo $productos['nombre']?>">
